@@ -1,14 +1,30 @@
 @startuml LandRegistryLegal
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+allow_mixing
 
-Container_Boundary(sys1, "Land Registry Legal") {
-    Container(cadObj, "Cadastral Object", "The Cadastral object")
-    Container(legalRight, "Legal Right", "The legal rights of the object")
-    Container(lease, "Lease", "The lease (a.k.a. morgage) on the object")
+namespace ladm.legal {
 
+    class CadastralObject {
+        String id
+        String ref
+    }
+
+    class LegalRight {
+
+    }
+
+    class LeaseRight {
+
+    }
+
+    CadastralObject "1" *-right- "*" LegalRight
+    CadastralObject "0" *-- "*" LeaseRight
 }
 
-Rel_Right(cadObj, legalRight, "has", "1-*")
-Rel(cadObj, lease, "has", "0-*")
+namespace ladm.person {
+    class Person {}
+}
+
+ladm.legal.LegalRight -- ladm.person.Person
+ladm.legal.LeaseRight -right- ladm.person.Person
 
 @enduml

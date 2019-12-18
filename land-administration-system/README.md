@@ -10,7 +10,7 @@ The **System Context** is defined in [`src/system-context.puml`](src/system-cont
 
 This displays that the Land Administration system consists of _two_ systems, one for the legal parts and one for the GEO spatial parts. This is the case in most countries, at least it is for the Netherlands ;-)
 
-Taking a look inside the Land Registry Legal 'container' this structure is defined in [`land-registry-legal.puml`](land-registry-legal.puml). The result (at some point in time) is this:
+Taking a look inside the Land Registry Legal 'container' this structure is defined in [`src/land-registry-legal.puml`](src/land-registry-legal.puml). The result (at some point in time) is this:
 
 <img src="doc/images/LandRegistryLegal.png">
 
