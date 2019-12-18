@@ -30,3 +30,12 @@ The [C4 model](https://www.infoq.com/articles/C4-architecture-model/) introduces
 # Implementation
 
 Too bad C4 modelling implemented in [structurizr](https://structurizr.com/) is based on services Structurizr provides. It would be better if this would have been open source <span style="background-color: yellow;">[research: or is it open source ... ?]</span>
+
+## Examples
+
+- [Land Administration System](land-administration-system)
+
+## Local Development Environment
+
+- [VSCode] (by `choco install vscode`) with extensions:
+  - [jebbs.plantuml] with configuration to use `server` with public [plantuml server](https://www.plantuml.com/plantuml)
