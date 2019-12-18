@@ -1,13 +1,20 @@
-@startuml C4_Elements
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+@startuml LandAdministrationSystemContext
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
 
-Person(notary, "Notary", "The legal person to sign legal documents")
-Person(landRegistrar, "Land Registrar", "The party how collects coordinates of the parcels")
-System(ladmLegal, "LADM Legal", "The legal part of the Land Administration")
-System(ladmSpatial, "LADM Spatial", "The GEO spatial part of the Land Administration")
+Person_Ext(notary, "Notary", "The legal party to sign legal documents")
+Person(landRegistrar, "Land Registrar", "The party how collects coordinates and spatial features of the parcels")
+System_Boundary(sys1, "Land Adminstration System") {
+    Container(ladmLegal, "Land Registry Legal", "The legal part of the Land Administration")
+    Container(ladmSpatial, "Land Registry Spatial", "The GEO spatial part of the Land Administration")
+    Container(ladmApi, "API", "Programming interface to query the Land Adminstration")
 
-Rel(ladmSpatial, ladmLegal, "Parcel")
-Rel(notary, ladmLegal, "Deed")
-Rel(notary, ladmSpatial, "Deed")
-Rel(landRegistrar, ladmSpatial, "Deed")
+}
+
+Rel(notary, ladmLegal, "sends", "Deed")
+Rel(notary, ladmSpatial, "sends", "Deed")
+Rel(landRegistrar, ladmSpatial, "commit", "Spatial Data")
+Rel_Right(ladmSpatial, ladmLegal, "sync", "Parcel")
+Rel_U(ladmApi, ladmSpatial, "read")
+Rel_U(ladmApi, ladmLegal, "read")
+
 @enduml
