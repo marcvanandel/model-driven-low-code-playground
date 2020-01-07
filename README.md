@@ -75,8 +75,7 @@ Too bad C4 modelling implemented in [structurizr](https://structurizr.com/) is b
 - [VSCode] (by `choco install vscode`) with extensions:
   - [jebbs.plantuml] with configuration to use `server` with public [plantuml server](https://www.plantuml.com/plantuml)
 
-<style type="text/css">
-yellow {
-    background-color: yellow;
-}
+<style
+  type="text/css">
+.yellow {background-color: yellow;}
 </style>
