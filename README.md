@@ -16,7 +16,25 @@ Well, again: _Would it be possible to remove the technical parts and let the tec
 
 Targeting the complex domains (= complex business applications) and the 'hardcore' software developer and using the software development metholodogies for proper development and we combine this with the gained knowledge and experience of model driven * and low code strategies ... this should lead to something awesome and incredible, right? And let's prevent ourselves from just being another theoretical exercise and let's take a pragmatic and practical approach to prove this concept.
 
-Let's start with simple UML structures, looking at the [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) building blocks like [Value object](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks), [Entity](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks), [Domain aggregate](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks) (or aggregate for short) with just some simple relationships like composition and encapsulation (we might even leave inheritance out for now because this has some evil complexity towards different implementations - a.k.a. languages). Let's implement this in a fairly high level language like [Kotlin](https://kotlinlang.org/) or maybe [TypeScript](https://www.typescriptlang.org/). And start with a complex domain we - as started at Dutch [Kadaster](https://www.kadaster.nl/) - know pretty well ... but let's go for the internationally standardized version of the [Land Administration Domain Model](https://www.sciencedirect.com/science/article/pii/S0264837715000174) ([ISO 51206](https://www.iso.org/standard/51206.html) LADM v1.x - or maybe even v2.0.alpha which we need to extend with [Domain events](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks) from Domain Driven Design ;-)
+Let's start with simple UML structures (see also [UML mode](https://martinfowler.com/bliki/UmlMode.html)), looking at the [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) building blocks like [Value object](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks), [Entity](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks), [Domain aggregate](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks) (or aggregate for short) with just some simple relationships like composition and encapsulation (we might even leave inheritance out for now because this has some evil complexity towards different implementations - a.k.a. languages). Let's implement this in a fairly high level language like [Kotlin](https://kotlinlang.org/) or maybe [TypeScript](https://www.typescriptlang.org/). And start with a complex domain we - as started at Dutch [Kadaster](https://www.kadaster.nl/) - know pretty well ... but let's go for the internationally standardized version of the [Land Administration Domain Model](https://www.sciencedirect.com/science/article/pii/S0264837715000174) ([ISO 51206](https://www.iso.org/standard/51206.html) LADM v1.x - or maybe even v2.0.alpha which we need to extend with [Domain events](https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks) from Domain Driven Design ;-)
+
+# Background info
+
+There is many content which might have some input or insight in this. These are the valueble resources used in the research and development of this concept.
+
+- **Martin Fowler**'s [bliki](https://martinfowler.com/bliki/) - Thoughtleader on many aspects in software development in a broad way;
+  
+  > _Thank you for your insights and your publications about them! Your insight are of great help and inspiration!_
+
+  - [Model Driven Development](https://martinfowler.com/bliki/ModelDrivenSoftwareDevelopment.html) and [Model Driven Architecture](https://martinfowler.com/bliki/ModelDrivenArchitecture.html)
+  - [UML mode](https://martinfowler.com/bliki/UmlMode.html)
+
+- **Steve Cook** - Software Architect and UML thinker + criticaster ;-) (note: [retired](http://dslbook.azurewebsites.net/Bios/SteveCook.aspx) in 2013)
+  - [MDA Journal January 2004](http://www.bptrends.com/publicationfiles/01-04%20COL%20Dom%20Spec%20Modeling%20Frankel-Cook.pdf)
+
+- **Dave Thomas**
+  - [Column about UML (2003)](http://www.jot.fm/issues/issue_2003_01/column1/)
+
 
 # Design
 
