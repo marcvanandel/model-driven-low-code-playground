@@ -1,0 +1,36 @@
+@startuml LADM_Source
+allow_mixing
+
+namespace ladm.source {
+
+    class Source {
+        + acceptance : DateTime
+        + availabilityStatus : enum
+        + extArchiveId : ExtArchiveId
+        + lifeSpanStamp : DateTime
+        + mainType : CI_PresentationFormCode
+        + quality : DQ_Element
+        + recordation : DateTime
+        + sID: ObjectIdentifier
+        + source : CI_ResponsibleParty
+        + submission : DateTime
+    }
+
+    class AdministrativeSource {
+        + text : MultiMediaType
+        + type : AdministrativeSourceType
+    }
+
+    class SpatialSource {
+        + measurements : OM_Observation
+        + procedure : OM_Process
+        + type : SpatialSourceType
+    }
+
+    Source -- ladm.common.ObjectIdentifier
+    Source <|-- AdministrativeSource
+    Source <|-- SpatialSource
+
+}
+
+@enduml

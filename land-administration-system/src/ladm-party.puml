@@ -1,0 +1,39 @@
+@startuml LADM_Party
+allow_mixing
+
+namespace ladm.party {
+    
+    class Party {
+        + extPID : ObjectIdentifier
+        + name : String
+        + pId : ObjectIdentifier
+        + role: PartyRoleType
+        + type : PartyType
+    }
+
+    class GroupParty {
+        + groupId : ObjectIdentifier
+        + type : GroupPartyType
+        + members : Party[]
+        == contraints ==
+        {members.sum(::share) == 1 (per group)}
+    }
+
+    class MemberShare {
+        + member : Party
+        + share : Fraction
+    }
+
+    enum PartyType <<codeList>>
+    enum GroupPartyType <<codeList>>
+    enum PartyRoleType <<codeList>>
+
+    Party <|-- GroupParty
+    MemberShare "0..1" o-- "1" Party : member
+    GroupParty "0..1" o-- "2..*" MemberShare : members
+
+    Party -- ladm.common.ObjectIdentifier
+    GroupParty -- ladm.common.ObjectIdentifier
+}
+
+@enduml

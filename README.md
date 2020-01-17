@@ -62,9 +62,21 @@ The [C4 model](https://www.infoq.com/articles/C4-architecture-model/) introduces
 1. **Component**; grouping of code inside building blocks
 1. **Code**; the actual code and UML classes level
 
+The visualisation of these levels should be 'zoomable'. Starting with the overview at System context users should be able to zoom in to Code level. Within the Code level there are even more levels:
+
+1. Package level
+1. Package level with only classes (names only) with relations between packages
+1. Class name level (all classes)
+1. Class member level
+
+In this description Class being anything from interface, abstract class and concrete class.
+
 # Implementation
 
 Too bad C4 modelling implemented in [structurizr](https://structurizr.com/) is based on services Structurizr provides. It would be better if this would have been open source <span style="background-color: yellow;">[research: or is it open source ... ?]</span>
+
+- [Text UML tools list](https://modeling-languages.com/text-uml-tools-complete-list/) (Dec, 2018)
+- [PlantUML 2 code](https://github.com/jupe/puml2code); generates to different programming languages including Java, C#, ECMAScript5 and 6, TypeScript and Python.
 
 ## Examples
 

@@ -1,0 +1,50 @@
+@startuml LADM_Administrative
+scale 1000 width
+
+namespace ladm.administrative {
+
+    abstract class RightRestrictionOrResponsibility {
+        + description : String
+        + rID : ObjectIdentifier
+        + share : Fraction
+        + shareCheck : Boolean
+        + timeSpec : ISO8601_ISO14825_Type
+    }
+
+    class BasicAdministriveUnit {
+        + name : String
+        + type : BasicAdministriveUnitType
+        + uID : ObjectIdentifier
+        == constraints ==
+        {rrrs.filter(::shareCheck).sum(::share) == 1 per type}
+        {no overlap rrrs.timeSpec per summed type}
+    }
+
+    class Right
+    class Responsibility
+    class Restriction
+
+    class Mortgage
+
+    class AdministriveSource
+
+    RightRestrictionOrResponsibility "1..*" -- "1" BasicAdministriveUnit
+
+    BasicAdministriveUnit -- BasicAdministriveUnit : "required relationship"
+    BasicAdministriveUnit -- ladm.common.ObjectIdentifier
+
+    RightRestrictionOrResponsibility <|-- Right
+    RightRestrictionOrResponsibility <|-- Responsibility
+    RightRestrictionOrResponsibility <|-- Restriction
+
+    Restriction <|-- Mortgage
+    Mortgage -- Right
+
+    AdministriveSource -- BasicAdministriveUnit
+    AdministriveSource -- RightRestrictionOrResponsibility
+
+    ' CadastralObject "1" *-right- "*" LegalRight
+    ' CadastralObject "0" *-- "*" LeaseRight
+}
+
+@enduml

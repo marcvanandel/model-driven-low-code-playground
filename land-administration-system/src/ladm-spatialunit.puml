@@ -1,0 +1,44 @@
+@startuml LADM_SpatialUnit
+allow_mixing
+
+namespace ladm.spatialunit {
+
+    class SpatialUnit
+    note top of SpatialUnit : "alias: Parcel"
+
+    class SpatialUnitGroup
+
+    class LegalSpaceBuildingUnit
+    class LegalSpaceNetworkUnit
+
+    class Level
+
+    SpatialUnit -- SpatialUnit : "required relationship"
+
+    SpatialUnit -- SpatialUnitGroup
+    SpatialUnit o-- SpatialUnit : "sub units"
+    SpatialUnitGroup o-- SpatialUnitGroup : "parent units"
+
+    SpatialUnit <|-- LegalSpaceBuildingUnit
+    SpatialUnit <|-- LegalSpaceNetworkUnit
+
+    SpatialUnit -- Level
+
+    namespace surveying_and_representation {
+
+        class Point
+        class SpatialSource
+        class BoundaryFace
+        class BoundaryFaceString
+
+        Point -- BoundaryFaceString
+        Point -- SpatialSource
+        Point -- BoundaryFace
+        SpatialSource -- BoundaryFace
+        SpatialSource -- BoundaryFaceString
+
+    }
+
+}
+
+@enduml

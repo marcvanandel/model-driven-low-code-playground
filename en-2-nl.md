@@ -11,3 +11,7 @@
 | subject                           | subject; rechtspersoon                |
 | party                             | partij; groep van rechtspersonen      |
 | cadaster; land registry           | kadaster                              |
+| mortgage                          | hypotheek                             |
+| debtor                            | schuldenaar                           |
+| creditor                          | schuldeiser                           |
+| mortgage lender                   | hypotheekgever                        |

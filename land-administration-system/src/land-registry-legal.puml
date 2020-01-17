@@ -1,29 +1,18 @@
-@startuml LandAdministrationDomainModel
+@startuml LADM_Components
 allow_mixing
 
-namespace ladm.party {
-    class Party {}
-}
+!include ladm-common.puml
 
-namespace ladm.administrative {
+!include ladm-source.puml
+!include ladm-party.puml
+!include ladm-administrative.puml
+!include ladm-spatialunit.puml
 
-    interface RightRestrictionOrResponsibility
+hide members
+hide class
+hide enum
 
-    class BasicAdministriveUnit
-
-    RightRestrictionOrResponsibility <|-- BasicAdministriveUnit
-
-    ' CadastralObject "1" *-right- "*" LegalRight
-    ' CadastralObject "0" *-- "*" LeaseRight
-}
-
-namespace ladm.spatialunit {
-
-    class SpatialUnit
-
-}
-
-ladm.party.Party -right- ladm.administrative.RightRestrictionOrResponsibility
-ladm.administrative.BasicAdministriveUnit -right- ladm.spatialunit.SpatialUnit
+ladm.party.Party -- ladm.administrative.RightRestrictionOrResponsibility
+ladm.administrative.BasicAdministriveUnit -- ladm.spatialunit.SpatialUnit
 
 @enduml

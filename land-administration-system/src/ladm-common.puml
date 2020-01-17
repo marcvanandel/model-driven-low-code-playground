@@ -1,0 +1,25 @@
+@startuml LADM_Common
+allow_mixing
+
+namespace ladm.common #DDDDDD {
+
+    class Fraction {
+        + denominator : Integer
+        + numerator : Integer
+        --
+        equals(Fraction)
+        real() : Real
+        == constrains ==
+        {denominator > 0}
+        {numerator > 0}
+        {numerator <= denominator}
+    }
+
+    class ObjectIdentifier {
+        + namespace : String
+        + localId : String
+    }
+
+}
+
+@enduml
