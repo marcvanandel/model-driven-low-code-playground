@@ -7,8 +7,8 @@ namespace ladm.common #DDDDDD {
         + denominator : Integer
         + numerator : Integer
         --
-        equals(Fraction)
-        real() : Real
+        + equals(Fraction)
+        + real() : Real
         == constrains ==
         {denominator > 0}
         {numerator > 0}

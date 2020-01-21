@@ -76,7 +76,8 @@ In this description Class being anything from interface, abstract class and conc
 Too bad C4 modelling implemented in [structurizr](https://structurizr.com/) is based on services Structurizr provides. It would be better if this would have been open source <span style="background-color: yellow;">[research: or is it open source ... ?]</span>
 
 - [Text UML tools list](https://modeling-languages.com/text-uml-tools-complete-list/) (Dec, 2018)
-- [PlantUML 2 code](https://github.com/jupe/puml2code); generates to different programming languages including Java, C#, ECMAScript5 and 6, TypeScript and Python.
+- [PlantUML 2 code](https://github.com/jupe/puml2code); generates to different programming languages including Java, C#, ECMAScript5 and 6, TypeScript and Python
+- [Describing Linked Datasets with the VoID Vocabulary](https://www.w3.org/TR/void/)
 
 ## Examples
 
