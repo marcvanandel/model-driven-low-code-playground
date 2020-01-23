@@ -38,6 +38,7 @@ There is many content which might have some input or insight in this. These are 
 - Land Administration Domain Model (ISO19152) - submitted by [FIG](http://www.fig.net)
   - [TU Delft Wiki](https://wiki.tudelft.nl/bin/view/Research/ISO19152/WebHome)
   - [FIG article of the month 2019 Dec](http://www.fig.net/resources/monthly_articles/2019/Lemmen_etal_December_2019.asp)
+  - [LADM UML](https://github.com/ISO-TC211/HMMG) (@ Github)
 
 
 # Design
